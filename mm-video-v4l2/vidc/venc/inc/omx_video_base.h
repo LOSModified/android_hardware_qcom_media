@@ -569,7 +569,7 @@ class omx_video: public qc_omx_component
         virtual ~omx_video();  // destructor
 
         // virtual int async_message_process (void *context, void* message);
-        void process_event_cb(void *ctxt);
+        void process_event_cb(void *ctxt,unsigned char id);
 
         OMX_ERRORTYPE allocate_buffer(
                 OMX_HANDLETYPE hComp,
@@ -719,7 +719,8 @@ class omx_video: public qc_omx_component
                 OMX_PTR              appData,
                 void *               eglImage);
 
-        Signal signal;
+
+
         int  m_pipe_in;
         int  m_pipe_out;
 
